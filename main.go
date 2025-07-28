@@ -62,6 +62,26 @@ func main() {
 
 		fmt.Println("-------------------------")
 
+		for index, contentBlockUnion := range message.Content {
+			fmt.Printf("INDEX: %d\n", index)
+			for citIndex, citation := range contentBlockUnion.Citations {
+				fmt.Printf("CITATION[%d]: %q\n", citIndex, citation.URL)
+			}
+			fmt.Printf("DATA: %q\n", contentBlockUnion.Data)
+			fmt.Printf("ID: %q\n", contentBlockUnion.ID)
+			fmt.Printf("INPUT: %q\n", contentBlockUnion.Input)
+			fmt.Printf("NAME: %q\n", contentBlockUnion.Name)
+			fmt.Printf("SIGNATURE: %q\n", contentBlockUnion.Signature)
+			fmt.Printf("THINKING: %q\n", contentBlockUnion.Thinking)
+			fmt.Printf("TOOL-USE-ID: %q\n", contentBlockUnion.ToolUseID)
+			fmt.Printf("TYPE: %q\n", contentBlockUnion.Type)
+			fmt.Printf("TEXT:...\n%q\n", contentBlockUnion.Text)
+			fmt.Println()
+			fmt.Println()
+		}
+
+		fmt.Println("=-+-=-+-=-+-=-+-=-+-=-+-=")
+
 		fmt.Printf("%+v\n", message.Content)
 
 	}
